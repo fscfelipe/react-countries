@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
 
 export default class App extends Component {
@@ -15,10 +16,18 @@ export default class App extends Component {
     const res = await fetch('https://restcountries.eu/rest/v2/all');
     const json = await res.json();
 
-    //console.log(json);
+    this.setState({
+      allCountries: json,
+    });
   }
 
   render() {
-    return <h1>React Countries</h1>;
+    const { allCountries } = this.state;
+
+    return (
+      <div className="container">
+        <h1>React Countries</h1>
+      </div>
+    );
   }
 }
