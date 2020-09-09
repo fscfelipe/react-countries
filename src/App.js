@@ -16,8 +16,12 @@ export default class App extends Component {
     const res = await fetch('https://restcountries.eu/rest/v2/all');
     const json = await res.json();
 
+    const allCountries = json.map(({ name, numericCode, flag, population }) => {
+      return { name, id: numericCode, flag, population };
+    });
+
     this.setState({
-      allCountries: json,
+      allCountries: allCountries,
     });
   }
 
