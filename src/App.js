@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
 import Countries from './components/countries/Countries';
+import Header from './components/header/Header';
 
 export default class App extends Component {
   constructor() {
@@ -32,6 +33,7 @@ export default class App extends Component {
     return (
       <div className="container">
         <h1>React Countries</h1>
+        <Header />
         <Countries countries={allCountries} />
       </div>
     );
