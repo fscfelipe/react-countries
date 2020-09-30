@@ -4,7 +4,6 @@ export default class Header extends Component {
 
 
   handleInputChange = (event) => {
-    console.log(event.target.value)
     const newText = event.target.value;
 
     this.props.onChangeFilter(newText);
@@ -13,13 +12,13 @@ export default class Header extends Component {
 
   render() {
 
-    const { filter } = this.props;
+    const { filter, countryCount, totalPopulation } = this.props;
 
     return (
       <div>
         <input type="text" value={filter} onChange={this.handleInputChange} /> |
-        <span>Países:</span> |
-        <span>População:</span> |
+        <span>Países: {countryCount}</span> |
+        <span>População: {totalPopulation}</span> |
       </div>
     )
   }
